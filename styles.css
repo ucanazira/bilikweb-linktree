@@ -1,0 +1,299 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.desktop-2 {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Trigger animation after 1ms delay */
+.desktop-2.variant-1 {
+  animation: changeVariant 3s linear 1ms forwards;
+}
+
+.desktop-2.variant-2 {
+  animation: changeVariant 3s linear 1ms forwards;
+}
+
+.desktop-2.variant-3 {
+  animation: changeVariant 3s linear 1ms forwards;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 10;
+  transition: top 1.5s ease-in-out, left 1.5s ease-in-out,
+    width 1.5s ease-in-out, height 1.5s ease-in-out,
+    background-color 1.5s ease-in-out;
+}
+
+/* VARIANT 1 */
+.variant-1 .blob1 {
+  top: -200px;
+  left: -40px;
+  width: 950px;
+  height: 850px;
+  background-color: #456ec7;
+}
+
+.variant-1 .blob2 {
+  bottom: -450px;
+  left: -50px;
+  width: 950px;
+  height: 950px;
+  background-color: #b799f3;
+}
+
+.variant-1 .blob3 {
+  top: -400px;
+  right: -100px;
+  width: 900px;
+  height: 900px;
+  background-color: #16193f;
+}
+
+.variant-1 .blob4 {
+  bottom: -450px;
+  right: -100px;
+  width: 1000px;
+  height: 1000px;
+  background-color: #6b51d1;
+}
+
+/* VARIANT 2 */
+.variant-2 .blob1 {
+  bottom: -200px;
+  left: -180px;
+  width: 950px;
+  height: 950px;
+  background-color: #456ec7;
+}
+
+.variant-2 .blob2 {
+  top: -200px;
+  right: -120px;
+  width: 900px;
+  height: 900px;
+  background-color: #b799f3;
+}
+
+.variant-2 .blob3 {
+  bottom: -400px;
+  right: -150px;
+  width: 850px;
+  height: 850px;
+  background-color: #16193f;
+}
+
+.variant-2 .blob4 {
+  top: -300px;
+  left: 20px;
+  width: 800px;
+  height: 800px;
+  background-color: #6b51d1;
+}
+
+/* VARIANT 3 */
+.variant-3 .blob1 {
+  top: -200px;
+  left: -200px;
+  width: 1000px;
+  height: 1000px;
+  background-color: #456ec7;
+}
+
+.variant-3 .blob2 {
+  bottom: -400px;
+  left: 50px;
+  width: 800px;
+  height: 800px;
+  background-color: #b799f3;
+}
+
+.variant-3 .blob3 {
+  top: -200px;
+  right: -150px;
+  width: 1000px;
+  height: 1000px;
+  background-color: #16193f;
+}
+
+.variant-3 .blob4 {
+  bottom: -450px;
+  right: 10px;
+  width: 800px;
+  height: 800px;
+  background-color: #6b51d1;
+}
+
+/* UI ELEMENTS */
+.logo {
+  width: 160px;
+  height: 160px;
+  z-index: 1;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+  z-index: 1;
+}
+
+.animated-button {
+  display: flex; /* Menggunakan flex untuk lebih konsisten */
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  padding: 10px 35px; /* Menyesuaikan padding seperti di .frame11 */
+  font-size: 16px;
+  font-weight: 500;
+  background: white;
+  color: black;
+  border: 2px solid #1a1a80; /* Menambahkan border */
+  box-shadow: 0 4px 0 #1a1a80; /* Menambahkan shadow di bawah button */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 300px; /* Ukuran button */
+  height: auto; /* Sesuaikan tinggi dengan padding */
+  z-index: 1;
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 2;
+}
+
+.animated-button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a80;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  z-index: 1;
+}
+
+.animated-button span {
+  position: relative;
+  z-index: 3;
+  color: inherit;
+}
+
+.animated-button:hover::after {
+  transform: translateY(0%);
+}
+
+.animated-button:hover span {
+  color: white;
+}
+
+.animated-button:active span {
+  color: black;
+}
+
+.credit {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  margin-top: 100px;
+  line-height: 1.2;
+}
+
+.madeby {
+  margin: 0;
+}
+
+.bilikwebagency {
+  font-weight: bold;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .animated-button {
+    width: 80%;
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .credit {
+    font-size: 15px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .animated-button {
+    width: 90%;
+    font-size: 14px;
+    padding: 12px 24px;
+  }
+
+  .credit {
+    font-size: 14px;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .animated-button {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  .credit {
+    font-size: 13px;
+    margin-top: 40px;
+  }
+}
